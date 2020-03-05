@@ -1,3 +1,8 @@
+# ConnectFour
+Connect Four Game
+
+ES6, SCSS, React, Redux, Jest, npm, webpack
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
