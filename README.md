@@ -1,2 +1,2 @@
-# ConnectFour-
+# ConnectFour
 Connect Four Game
