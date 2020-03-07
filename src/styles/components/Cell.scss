@@ -1,0 +1,14 @@
+#{$CELL} {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    background-color: skyblue;
+}
+
+.player1 {
+    background-color: #{$RED};
+}
+
+.player2 {
+    background-color: #{$YELLOW};
+}

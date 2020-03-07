@@ -1,4 +1,8 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
+@import "components/Board";
+@import "components/Grid";
 @import "components/Header";
+@import "components/Column";
+@import "components/Cell";

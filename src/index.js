@@ -4,16 +4,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 
-import Board from "./container/Board";
+import "./styles/main.scss";
+
 import store from "./state/store";
+import BoardContainer from "./container/BoardContainer";
 import registerServiceWorker from "./registerServiceWorker";
 
 const loadGame = (container) => {
-	console.log(container);
-
 	ReactDOM.render(
 		<Provider store={store}>  
-			<Board/>
+			<BoardContainer/>
 		</Provider>, 
 		container
 	);

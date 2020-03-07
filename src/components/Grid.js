@@ -1,18 +1,21 @@
 import React from "react";
 import Column from "./Column";
-import { ROW_SIZE, COLUMN_SIZE } from "../state/store";
 
 class Grid extends React.Component {
 	render() {
+		const board = this.props.board;
+		const size = board.length;
 		const columns = [];
 
-		for (let column = 0; column < COLUMN_SIZE; ++column) {
-			columns[column] = <Column column={column} rowSize={ROW_SIZE} />;
+		for (let column = 0; column < size; ++column) {
+			columns[column] = <Column column={column} rows={board[column]} onClick={() => this.props.fillCell(column)} />;
 		}
 
-		console.log(columns);
-
-		return <div className="grid">{columns}</div>;
+		return (
+            <div className="grid">
+                {columns}
+            </div>
+        );
 	}
 }
 

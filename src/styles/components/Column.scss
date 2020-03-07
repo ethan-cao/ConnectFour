@@ -1,0 +1,11 @@
+#{$COLUMN} {
+    width: 10%;
+
+    cursor: pointer;
+    margin: 2px;
+}
+
+
+#{$COLUMN}:hover {
+    background: #{$HOVEROVER_BG};
+  }

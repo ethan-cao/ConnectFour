@@ -1,4 +1,4 @@
-export const FILL = "add";
+export const FILL = "fill";
 
 export const fillCell = (column) => {
     return  {
