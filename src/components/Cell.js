@@ -1,11 +1,11 @@
-import { Component } from "react";
+import React from "react";
 
-class Cell extends Component {
+class Cell extends React.Component {
 
     render() {
         return (
-            <div className="cell">
-
+            <div className="cell" row={this.props.row}>
+                cell
             </div>
         );
     }

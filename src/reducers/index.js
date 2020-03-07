@@ -1,5 +1,15 @@
-import {combineReducers} from "redux";
+import { FILL } from "../actions";
 
-export default combineReducers({
-    a: 1
-});
+const playGame = (state=[], action) => {
+
+    switch (action.type) {
+        case FILL: 
+            console.log("fill in column " + action.payLoad);
+            break;
+        default:
+            return state;
+    }
+
+};
+
+export default playGame;
