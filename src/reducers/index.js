@@ -1,6 +1,6 @@
 import { FILL } from "../actions";
-import checkWinner from "../utils/checkWinner";
 import { initialState } from "../state/store";
+import { checkwinner } from "../utils/checkWinner";
 
 const playGame = (state = initialState, action) => {
 	switch (action.type) {
@@ -28,14 +28,15 @@ const playGame = (state = initialState, action) => {
 			}
 			newBoard[column][row] = state.player;
 
-			// const winner = checkWinner(board);
-			// if (winner !== null) {
-			//     alert(`winner is ${winner}`);
-			// }
+
+			const newPlayer = !state.player;
+			const newAvailableSlots = state.availableSlots - 1;
+			const winner = newAvailableSlots === 0 ? "Draw" : checkwinner(newBoard);
 
 			return {
-				player: !state.player,
-				winner: state.winner,
+				player: newPlayer,
+				availableSlots: newAvailableSlots,
+				winner: winner,
 				board: newBoard
 			};
 		default:

@@ -17,7 +17,6 @@ class Cell extends React.Component {
         }
 
         const clazz = player === null ? "cell" : "cell " + player; 
-        console.log(clazz)
 
         return (
             <div className={clazz} column={this.props.column} row={this.props.row}>
