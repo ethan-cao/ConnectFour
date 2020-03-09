@@ -13,7 +13,7 @@ export const initialState = {
     player: PLAYER1,
     winner: null,
     availableSlots: ROW_SIZE * COLUMN_SIZE,
-    board: Array(ROW_SIZE).fill(null).map(x => Array(COLUMN_SIZE).fill(null))
+    board: Array(COLUMN_SIZE).fill(null).map(x => Array(ROW_SIZE).fill(null))
 }
 
 const enhancers = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();

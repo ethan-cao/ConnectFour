@@ -1,8 +1,12 @@
 import { FILL } from "../actions";
-import { initialState } from "../state/store";
-import { checkwinner } from "../utils/checkWinner";
+import { initialState, ROW_SIZE, COLUMN_SIZE } from "../state/store";
+import checkwinner from "../utils/checkWinner";
 
 const playGame = (state = initialState, action) => {
+	if (state.winner !== null) {
+		return state;
+	}
+
 	switch (action.type) {
 		case FILL:
 			const column = action.payload;
@@ -31,7 +35,11 @@ const playGame = (state = initialState, action) => {
 
 			const newPlayer = !state.player;
 			const newAvailableSlots = state.availableSlots - 1;
+
+			const filledSlots = ROW_SIZE * COLUMN_SIZE - newAvailableSlots;
+
 			const winner = newAvailableSlots === 0 ? "Draw" : checkwinner(newBoard);
+
 
 			return {
 				player: newPlayer,
