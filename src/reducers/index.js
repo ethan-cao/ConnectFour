@@ -1,11 +1,10 @@
-import { FILL } from "../actions";
+import { FILL, RESTART } from "../actions";
 import { initialState, ROW_SIZE, COLUMN_SIZE } from "../state/store";
 import checkwinner from "../utils/checkWinner";
 
 const playGame = (state = initialState, action) => {
-	if (state.winner !== null) {
-		return state;
-	}
+	console.log(action);
+
 
 	switch (action.type) {
 		case FILL:
@@ -14,6 +13,10 @@ const playGame = (state = initialState, action) => {
 
 			// the column is ready full
 			if (rows[0] != null) {
+				return state;
+			}
+			
+			if (state.winner !== null) {
 				return state;
 			}
 
@@ -47,6 +50,8 @@ const playGame = (state = initialState, action) => {
 				winner: winner,
 				board: newBoard
 			};
+		case RESTART:
+			return initialState;
 		default:
 			return state;
 	}

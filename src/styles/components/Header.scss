@@ -1,0 +1,16 @@
+#{$HEADER} {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+}
+
+#{$RESTARTER} {
+    display: inline-block;
+    background-color: #{$GRID_BG_COLOR};
+    border: none;
+    color: white;
+    padding: 5px;
+    margin: 0px 5px 5px 10px ;
+    text-align: center;
+    text-decoration: none;
+ }

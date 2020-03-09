@@ -10,7 +10,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-	fillCell: actions.fillCell
+	fillCell: actions.fillCell,
+	restart: actions.restart
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);
