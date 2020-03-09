@@ -1,11 +1,12 @@
 #{$COLUMN} {
-    width: 10%;
+    // width: 2em;
+    // height: 14em;
 
-    cursor: pointer;
+	cursor: pointer;
     margin: 2px;
+    border: 1px;
 }
 
-
 #{$COLUMN}:hover {
-    background: #{$HOVEROVER_BG};
-  }
+	background-color: #{$HOVEROVER_BG};
+}

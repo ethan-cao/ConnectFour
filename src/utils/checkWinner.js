@@ -3,10 +3,14 @@ import { PLAYER1, PLAYER2, COLUMN_SIZE, ROW_SIZE } from "../state/store";
 let winning = [];
 
 /**
+ * Given the player represented by board[column][row], 
+ * check if there are 4 consecutive cells from the player,towards right horizontally
  * 
- * @param {*} board 
- * @param {*} column 
- * @param {*} row 
+ * @return {Boolean} return ture, if there are 4 consecutive cells from the player
+ * 
+ * @param {Array} board - 2D array representing a connect-four game board
+ * @param {Number} column - column index
+ * @param {Number} row - row idnex
  */
 const checkHorizontalCell = (board, column, row) => {
 	const player = board[column][row];
@@ -15,7 +19,7 @@ const checkHorizontalCell = (board, column, row) => {
 		player === board[column + 1][row] &&
 		player === board[column + 2][row] &&
 		player === board[column + 3][row]) {
-		console.log([column, row], [column+1, row], [column+2, row], [column+3, row]);
+		// console.log([column, row], [column+1, row], [column+2, row], [column+3, row]);
 		return player;
 	}
 
@@ -29,7 +33,7 @@ const checkVerticalCell = (board, column, row) => {
 		player === board[column][row + 1] &&
 		player === board[column][row + 2] &&
 		player === board[column][row + 3]) {
-		console.log([column, row], [column, row+1], [column, row+2], [column, row+3]);
+		// console.log([column, row], [column, row+1], [column, row+2], [column, row+3]);
 		return player;
 	}
 
@@ -43,7 +47,7 @@ const checkAscendingDiagonalCell = (board, column, row) => {
 		player === board[column + 1][row - 1] &&
 		player === board[column + 2][row - 2] &&
 		player === board[column + 3][row - 3]) {
-		console.log([column, row], [column+1, row-1], [column+2, row-2], [column+3, row-3]);
+		// console.log([column, row], [column+1, row-1], [column+2, row-2], [column+3, row-3]);
 		return player;
 	}
 
