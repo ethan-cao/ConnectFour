@@ -1,40 +1,73 @@
 import { PLAYER1, PLAYER2, COLUMN_SIZE, ROW_SIZE } from "../state/store";
 
-const WINNING_CONDITION = 4;
+let winning = [];
 
-const move = (board, cache, column, row, player, targetCount) => {
-	if (column >= board.length || column < 0 || row >= board[0].length || row < 0 ) {
-		return false;
+/**
+ * 
+ * @param {*} board 
+ * @param {*} column 
+ * @param {*} row 
+ */
+const checkHorizontalCell = (board, column, row) => {
+	const player = board[column][row];
+
+	if (column + 3 < COLUMN_SIZE &&
+		player === board[column + 1][row] &&
+		player === board[column + 2][row] &&
+		player === board[column + 3][row]) {
+		console.log([column, row], [column+1, row], [column+2, row], [column+3, row]);
+		return player;
 	}
 
-	if (cache[column][row]) {
-		return false;
-	}
-
-	cache[column][row] = true;
-
-	const newTargetCount = board[column][row] === player ? targetCount - 1 : targetCount;
-
-	if (newTargetCount === 0) {
-		return true;
-	}
-
-	return (
-		move(board, column + 0, row + 1, player, newTargetCount) ||
-		move(board, column + 1, row + 0, player, newTargetCount) ||
-		move(board, column + 1, row + 1, player, newTargetCount) || 
-		move(board, column + 1, row - 1, player, newTargetCount) || 
-		move(board, column - 1, row - 1, player, newTargetCount) || 
-		move(board, column - 1, row + 1, player, newTargetCount) 
-	);
+	return null;
 };
 
-const checkwinner = (board) => {
+const checkVerticalCell = (board, column, row) => {
+	const player = board[column][row];
+
+	if (row + 3 < ROW_SIZE &&
+		player === board[column][row + 1] &&
+		player === board[column][row + 2] &&
+		player === board[column][row + 3]) {
+		console.log([column, row], [column, row+1], [column, row+2], [column, row+3]);
+		return player;
+	}
+
 	return null;
+}
 
+const checkAscendingDiagonalCell = (board, column, row) => {
+	const player = board[column][row];
+
+	if (column + 3 < COLUMN_SIZE && 
+		player === board[column + 1][row - 1] &&
+		player === board[column + 2][row - 2] &&
+		player === board[column + 3][row - 3]) {
+		console.log([column, row], [column+1, row-1], [column+2, row-2], [column+3, row-3]);
+		return player;
+	}
+
+	return  null;
+}
+
+const checkDescendingDiagonalCell = (board, column, row) => {
+	const player = board[column][row];
+
+	if (column + 3 < COLUMN_SIZE &&
+		row + 3 < ROW_SIZE &&
+		player === board[column + 1][row + 1] &&
+		player === board[column + 2][row + 2] &&
+		player === board[column + 3][row + 3]) {
+		console.log([column, row], [column+1, row+1], [column+2, row+2], [column+3, row+3]);
+		return player;
+	}
+
+	return null;
+}
+
+const checkwinner = (board) => {
+	let winner = null;
 	const t1 = performance.now();
-
-	const cache = Array(ROW_SIZE).fill(false).map(x => Array(COLUMN_SIZE).fill(false));
 
 	for (let column = 0; column < board.length; ++column) {
 		for (let row = 0; row < board[0].length; ++row) {
@@ -43,26 +76,34 @@ const checkwinner = (board) => {
 				continue;
 			}
 
-			console.log(`checking: ${column} - ${row}`)
-
-			let winner = move(board, cahce, column, row, PLAYER1, WINNING_CONDITION);
-			if (winner === true) {
-				console.log("winner is 1");
-				return PLAYER1;
+			winner = checkHorizontalCell(board, column, row) ;
+			if (winner !== null) {
+				return winner
 			}
 
-			winner = move(board, cache, column, row, PLAYER2, WINNING_CONDITION);
-			if (winner === true) {
-				console.log("winner is 2");
-				return PLAYER2;
+			winner = checkVerticalCell(board, column, row) ;
+			if (winner !== null) {
+				return winner
+			}
+			
+			winner = checkAscendingDiagonalCell(board, column, row) ;
+			if (winner !== null) {
+				return winner
+			}
+
+			winner = checkDescendingDiagonalCell(board, column, row) ;
+			if (winner !== null) {
+				return winner
 			}
 		}
 	}
 
-	const t2 = performance.now();
-	console.log("time spent ", t2 - t1);
 
-	return null;
+	const t2 = performance.now();
+	console.log("time spent on checkwinner() : ", t2 - t1);
+
+	return winner;
 };
 
 export default checkwinner;
+

@@ -24,7 +24,7 @@ const playGame = (state = initialState, action) => {
 				}
 			}
 
-			console.log(`fill ${column} - ${row}`);
+			// console.log(`fill ${column} - ${row}`);
 
 			const newBoard = [];
 			for (let i = 0; i < state.board.length; ++i) {
