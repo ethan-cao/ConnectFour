@@ -34,6 +34,5 @@ module.exports = {
 			chunkFilename: "[id].min.css"
 		})
 	],
-	watch: true,
 	devtool: "inline-source-map"
 };
