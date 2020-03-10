@@ -1,5 +1,4 @@
 # ConnectFour
-Connect Four Game
 Tech stack: ES6, SCSS, React, Redux, Jest, npm, webpack
 
 ### Demo
@@ -12,3 +11,5 @@ Tech stack: ES6, SCSS, React, Redux, Jest, npm, webpack
     npm run build
     npm start
 
+### How to run test
+    npm run test
