@@ -1,8 +1,7 @@
 # ConnectFour
 Tech stack: ES6, SCSS, React, Redux, Jest, npm, webpack
 
-### Demo
-    https://connectfour-dev.herokuapp.com/
+### Demo: https://connectfour-dev.herokuapp.com/
 
 
 ### How to run the game locally
