@@ -71,10 +71,11 @@ const checkDescendingDiagonalCell = (board, column, row) => {
 
 const checkwinner = (board) => {
 	let winner = null;
-	const t1 = performance.now();
+	// const t1 = performance.now();
 
-	for (let column = 0; column < board.length; ++column) {
-		for (let row = 0; row < board[0].length; ++row) {
+	// better performance than looping from beginning
+	for (let column = board.length - 1; column >= 0; --column) {
+		for (let row = board[0].length - 1; row >= 0; --row) {
 
 			if (board[column][row] === null) {
 				continue;
@@ -102,9 +103,8 @@ const checkwinner = (board) => {
 		}
 	}
 
-
-	const t2 = performance.now();
-	console.log("time spent on checkwinner() : ", t2 - t1);
+	// const t2 = performance.now();
+	// console.log("time spent on checkwinner() : ", t2 - t1);
 
 	return winner;
 };

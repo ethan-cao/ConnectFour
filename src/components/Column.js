@@ -1,5 +1,6 @@
 import React from "react";
 import Cell from "./Cell";
+import debounce from "../utils/debounce";
 
 class Column extends React.Component {
     render () {
@@ -10,7 +11,7 @@ class Column extends React.Component {
         }
 
         return (
-            <div className="column" onClick={this.props.onClick} column={this.props.column}>
+            <div className="column" onClick={debounce(this.props.onClick, 300)} column={this.props.column}>
                 {rows}
             </div>
         );
