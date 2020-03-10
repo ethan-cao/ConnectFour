@@ -3,8 +3,10 @@ import {createStore} from "redux";
 import reducers from "../reducers";
 
 export const PLAYER1 = true;
+export const PLAYER1_NAME = "player1";
 export const PLAYER1_COLOR = "Red";
 export const PLAYER2 = false;
+export const PLAYER2_NAME = "player2";
 export const PLAYER2_COLOR = "Yellow";
 export const ROW_SIZE = 6;
 export const DRAW = "draw";

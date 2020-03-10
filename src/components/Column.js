@@ -2,6 +2,8 @@ import React from "react";
 import Cell from "./Cell";
 import debounce from "../utils/debounce";
 
+const DEBOUNCE_TIME = 200;
+
 class Column extends React.Component {
     render () {
         const rows = [];
@@ -12,7 +14,7 @@ class Column extends React.Component {
 
         return (
             <div className="column">
-                <div className="column__unit" onClick={debounce(this.props.onClick, 300)} column={this.props.column}>
+                <div className="column__unit" onClick={debounce(this.props.onClick, DEBOUNCE_TIME)} column={this.props.column}>
                     {rows}
                 </div>
                 <div classNameN="column__indicator"></div>
