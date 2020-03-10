@@ -9,7 +9,7 @@ class Column extends React.Component {
         const rows = [];
 
         for (let row = 0; row < this.props.rows.length; ++row) {
-            rows[row] = <Cell column={this.props.column} row={row} player={this.props.rows[row]}/>
+            rows[row] = <Cell key={row} column={this.props.column} row={row} player={this.props.rows[row]}/>
         }
 
         return (
@@ -17,7 +17,7 @@ class Column extends React.Component {
                 <div className="column__unit" onClick={debounce(this.props.onClick, DEBOUNCE_TIME)} column={this.props.column}>
                     {rows}
                 </div>
-                <div classNameN="column__indicator"></div>
+                <div className="column__indicator"></div>
             </div>
         );
     }

@@ -62,7 +62,7 @@ const checkDescendingDiagonalCell = (board, column, row) => {
 		player === board[column + 1][row + 1] &&
 		player === board[column + 2][row + 2] &&
 		player === board[column + 3][row + 3]) {
-		console.log([column, row], [column+1, row+1], [column+2, row+2], [column+3, row+3]);
+		// console.log([column, row], [column+1, row+1], [column+2, row+2], [column+3, row+3]);
 		return player;
 	}
 
