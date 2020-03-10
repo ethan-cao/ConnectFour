@@ -1,12 +1,17 @@
 #{$COLUMN} {
-    // width: 2em;
-    // height: 14em;
+	&__unit {
+		cursor: pointer;
+		background-color: #{$BG_COLOR};
+		border: 2px solid #{$BG_COLOR};
+	}
 
-	cursor: pointer;
-    margin: 2px;
-    border: 1px;
-}
-
-#{$COLUMN}:hover {
-	background-color: #{$HOVEROVER_BG};
+	&:hover::after {
+		font-family: "Material Icons";
+		font-style: normal;
+        font-weight: 400;
+        font-size: 2em;
+        content: "\e5d8";
+        display: block;
+        text-align: center;
+	}
 }

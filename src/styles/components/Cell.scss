@@ -1,16 +1,18 @@
 #{$CELL} {
-    width: 4em;
-    height: 4em;
-    margin: 1px;
+	width: 4em;
+	height: 4em;
+	margin: 1px;
 
-    background-color: white;
-    border-radius: 2em;
+	background-color: white;
+	border-radius: 2em;
+
+	margin: 2px;
 }
 
 .player1 {
-    background-color: #{$RED};
+	background-color: #{$RED};
 }
 
 .player2 {
-    background-color: #{$YELLOW};
+	background-color: #{$YELLOW};
 }

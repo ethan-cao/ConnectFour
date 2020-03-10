@@ -11,8 +11,11 @@ class Column extends React.Component {
         }
 
         return (
-            <div className="column" onClick={debounce(this.props.onClick, 300)} column={this.props.column}>
-                {rows}
+            <div className="column">
+                <div className="column__unit" onClick={debounce(this.props.onClick, 300)} column={this.props.column}>
+                    {rows}
+                </div>
+                <div classNameN="column__indicator"></div>
             </div>
         );
     }
