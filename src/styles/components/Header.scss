@@ -14,3 +14,11 @@
     text-align: center;
     text-decoration: none;
  }
+
+ #{$HEADER_MESSAGE}__player1 {
+    color: #{$RED};
+ }
+
+ #{$HEADER_MESSAGE}__player2 {
+    color: #{$YELLOW};
+ }

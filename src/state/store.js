@@ -7,6 +7,7 @@ export const PLAYER1_COLOR = "Red";
 export const PLAYER2 = false;
 export const PLAYER2_COLOR = "Yellow";
 export const ROW_SIZE = 6;
+export const DRAW = "draw";
 export const COLUMN_SIZE = 7;
 
 export const initialState = {
