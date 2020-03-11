@@ -6,6 +6,7 @@ Tech stack: ES6, SCSS, React, Redux, Jest, npm, webpack
 
 ### How to run the game locally
     git clone https://github.com/ethan-cao/ConnectFour.git    
+    cd ConnectFour/
     npm install
     npm run build
     npm start
