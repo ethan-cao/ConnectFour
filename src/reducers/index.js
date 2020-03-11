@@ -37,14 +37,18 @@ const playGame = (state = initialState, action) => {
 			const newPlayer = !state.player;
 			const newAvailableSlots = state.availableSlots - 1;
 
-			// TODO avoid checking
-			const filledSlots = ROW_SIZE * COLUMN_SIZE - newAvailableSlots;
-			const winner = newAvailableSlots === 0 ? DRAW : checkwinner(newBoard);
+			let newWinner = null;
+			const filledSlots = initialState.availableSlots - newAvailableSlots;
+
+			// check winner iff there are more than 6 cell filled
+			if (filledSlots > 6) {
+				newWinner = newAvailableSlots === 0 ? DRAW : checkwinner(newBoard);
+			}
 
 			return {
 				player: newPlayer,
 				availableSlots: newAvailableSlots,
-				winner: winner,
+				winner: newWinner,
 				board: newBoard
 			};
 		case RESTART:
