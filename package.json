@@ -38,10 +38,10 @@
 		"react": "^16.13.0",
 		"react-dom": "^16.13.0",
 		"react-redux": "^7.2.0",
-		"react-scripts": "3.4.0",
+		"react-scripts": "5.0.1",
 		"redux": "^4.0.5",
 		"webpack": "^4.41.5",
-		"webpack-cli": "^3.3.10"
+		"webpack-cli": "^3.3.12"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
